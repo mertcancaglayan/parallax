@@ -10,7 +10,7 @@
 body {
 	width: 100vw;
 	height: 100vh;
-	background-image: url(images/space.jpg);
+	background-image: url(images/background.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -31,8 +31,8 @@ body {
 
 #title {
 	display: flex;
-	justify-content: center; 
-	align-items: center; 
+	justify-content: center;
+	align-items: center;
 	color: aliceblue;
 }
 
@@ -58,7 +58,9 @@ body {
 	position: absolute;
 }
 
-.textContainer .sunText {
+.textContainer .sunText,
+.earthText,
+.moonText {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -66,10 +68,19 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -150%);
 	width: 600px;
 	height: 600px;
 	color: aliceblue;
+}
+.sunText {
+	transform: translate(-50%, -150%);
+}
+.earthText {
+	transform: translate(-850%, -50%);
+}
+
+.moonText {
+	transform: translate(-50%, -150%);
 }
 
 .sunText h2 {
@@ -78,4 +89,87 @@ body {
 
 .sunText p {
 	font-size: 1.2rem;
+}
+
+.earthContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-1000%, -100%);
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.earthContainer::after {
+	position: absolute;
+	top: 350px;
+	left: 250px;
+	border-radius: 50%;
+}
+
+#earthShadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	-webkit-box-shadow: inset 28px -25px 56px -1px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: inset 28px -25px 56px -1px rgba(0, 0, 0, 0.75);
+	box-shadow: inset 28px -25px 56px -1px rgba(0, 0, 0, 0.75);
+	z-index: 1;
+}
+
+#earth {
+	width: 200%;
+	height: 100%;
+}
+
+.moonContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-1000%, -1000%);
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.moonContainer::after {
+	position: absolute;
+	top: 50px;
+	left: 150px;
+	border-radius: 50%;
+}
+
+#moonShadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	-webkit-box-shadow: inset 54px 54px 37px -1px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: inset 54px 54px 37px -1px rgba(0, 0, 0, 0.75);
+	box-shadow: inset 54px 54px 37px -1px rgba(0, 0, 0, 0.75);
+	z-index: 1;
+}
+
+#moonShadow::after {
+	top: 50px;
+	left: 150px;
+	border-radius: 50%;
+	-webkit-box-shadow: inset 54px 54px 37px -1px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: inset 54px 54px 37px -1px rgba(0, 0, 0, 0.75);
+	box-shadow: inset 54px 54px 37px -1px rgba(0, 0, 0, 0.75);
+	z-index: 1;
+}
+
+#moon1 {
+	width: 1000%;
+	height: 100%;
+	z-index: 0;
 }
